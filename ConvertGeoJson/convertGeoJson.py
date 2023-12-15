@@ -23,6 +23,9 @@ def convert_geojson(input_file_path, output_file_path):
             elif feature['geometry']['type'] == 'Polygon':
                 feature['geometry']['coordinates'] = [[pyproj.transform(proj1, proj2, x, y) for x, y in ring] for ring in
                                                        feature['geometry']['coordinates']]
+            elif feature['geometry']['type'] == 'LineString':
+                 feature['geometry']['coordinates'] = [pyproj.transform(proj1, proj2, x, y) for x, y in
+                                                        feature['geometry']['coordinates']]
 
         # Write the transformed GeoJSON to the output file
         json.dump(geojson, output_file)
