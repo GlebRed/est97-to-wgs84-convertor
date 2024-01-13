@@ -5,7 +5,7 @@ with open('README.md', 'r') as f:
 
 setup(
     name='ConvertGeoJson',
-    version='1.0.8',
+    version='1.0.9',
     description='Converts a GeoJSON file from L-EST97 Estonian Coordinate System of 1997 to WGS84',
     long_description=long_description,
     long_description_content_type='text/markdown',
